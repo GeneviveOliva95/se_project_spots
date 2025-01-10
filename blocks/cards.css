@@ -1,0 +1,33 @@
+.cards__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 413px);
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cards__list-item {
+  max-width: 413px;
+}
+
+.cards__image {
+  display: block;
+  height: 413px;
+  width: 413px;
+  object-fit: cover;
+}
+
+.cards__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards__description {
+  margin: 0;
+}
+
+.cards__button {
+  background: none;
+  border: none;
+  padding: 0;
+}
