@@ -1,0 +1,32 @@
+.profile {
+  display: flex;
+  padding: 34px 0 20px;
+  border-bottom: solid 1px rgba(33, 33, 33, 0.4);
+}
+
+.profile__image {
+  height: 190px;
+  width: 190px;
+  margin-right: 20px;
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__name {
+  margin: 0 0 12px;
+}
+
+.profile__description {
+  margin: 0;
+}
+
+.profile__edit-button {
+  margin-top: auto;
+}
+
+.profile__post-button {
+  margin-left: auto;
+}
