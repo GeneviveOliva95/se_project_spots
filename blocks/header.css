@@ -4,3 +4,8 @@
   background-color: #fff;
   padding: 10px 0;
 }
+
+.header__logo {
+  height: 26px;
+  width: 94px;
+}
