@@ -18,7 +18,7 @@
 
 .profile__name {
   max-width: 420px;
-  color: rgb(33, 33, 33);
+  color: #212121;
   margin: 0 0 12px;
   font-weight: 500;
   line-height: 1;
@@ -32,7 +32,8 @@
 
 .profile__description {
   max-width: 420px;
-  color: rgba(33, 33, 33, 0.7);
+  color: #212121;
+  opacity: 0.7;
   margin: 0;
   font-weight: 500;
   line-height: 1;
@@ -45,7 +46,8 @@
 }
 
 .profile__edit-button {
-  color: rgba(33, 33, 33, 0.7);
+  color: #212121;
+  opacity: 0.7;
   display: flex;
   gap: 8px;
   padding: 0;
@@ -60,6 +62,12 @@
   opacity: 0.7;
 }
 
+.profile__edit-button:hover,
+.profile__pencil-logo:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
 .profile__post-button {
   display: flex;
   gap: 8px;
@@ -67,7 +75,7 @@
   margin: auto 0 0 auto;
   border: none;
   border-radius: 8px;
-  color: rgb(252, 245, 229);
+  color: #fcf5e5;
   background-color: rgb(33, 33, 33);
   font-weight: 500;
   line-height: 1;
