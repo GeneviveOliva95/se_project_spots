@@ -1,4 +1,6 @@
 .page {
+  display: flex;
+  flex-direction: column;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   background-color: rgb(252, 245, 229);
   min-height: 100vh;
