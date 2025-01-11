@@ -1,14 +1,28 @@
 # Project 3: Spots
 
-### Overview
+This is the third project of the Software Engineering program at TripleTen.
+
+Spots is a social media web application created using HTML and CSS. It is based on a Figma design that supports layouts for mobile, tablet, and desktop.
+
+## Project features
+
+- Semantics HTML5
+- Grid Layout
+- Flexbox
+- BEM file structure
+- DevTools
+- Media Queries
+
+## Overview
 
 - Intro
 - Figma
 - Images
 
 **Intro**
+Spots allows users to customize their profiles, add or remove and caption photos, as well as like photos from other users.
 
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
+The web application is built according to responsive web design practices and contains hover functionality for best user experience.
 
 **Figma**
 
@@ -16,6 +30,22 @@ This project is made so all the elements are displayed correctly on popular scre
 
 **Images**
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
+Desktop Version - 1440px (with no text overflow):
 
-Good luck and have fun!
+![Desktop version of Spots with no text overflow](./images/demo/desktop-version.png)
+
+Mobile Version - 320px (with no text overflow):
+
+![Mobile version of Spots with no text overflow](./images/demo/mobile-version.png)
+
+Desktop Version - 1440px (with text overflow):
+
+![Desktop version of Spots with text overflow](./images/demo/desktop-version-text-overflow.png)
+
+Mobile Version - 320px (with text overflow):
+
+![Mobile version of Spots with text overflow](./images/demo/mobile-version-text-overflow.png)
+
+## Plans on Improving the project
+
+I would like to improve this project in the future by incorporating forms which will enable users to receive information on who liked their recent posts and fully customize their profiles.
