@@ -14,6 +14,12 @@ Spots is a social media web application created using HTML and CSS. It is based 
 - DevTools
 - Media Queries
 
+## Deployment
+
+This web page is deployed to GitHub Pages
+
+- [Spots deployment link](https://geneviveoliva95.github.io/se_project_spots/)
+
 ## Overview
 
 - Intro
