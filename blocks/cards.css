@@ -42,3 +42,12 @@
   border: none;
   padding: 0;
 }
+
+.cards__heart-logo {
+  opacity: 0.4;
+}
+
+.cards__heart-logo:hover {
+  opacity: 1;
+  cursor: pointer;
+}
