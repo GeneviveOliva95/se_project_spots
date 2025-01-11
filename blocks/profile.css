@@ -84,6 +84,7 @@
 
   .profile__name {
     margin: 12px 0 6px;
+    font-size: 20px;
   }
 
   .profile__edit-button {
