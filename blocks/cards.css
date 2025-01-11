@@ -20,7 +20,7 @@
 .cards__image {
   display: block;
   height: 413px;
-  width: 413px;
+  width: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -51,4 +51,14 @@
 .cards__heart-logo:hover {
   opacity: 1;
   cursor: pointer;
+}
+
+@media screen and (max-width: 627px) {
+  .cards__list {
+    grid-template-columns: repeat(auto-fit, 280px);
+  }
+
+  .cards__image {
+    height: 288px;
+  }
 }
