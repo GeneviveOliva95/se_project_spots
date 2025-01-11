@@ -32,10 +32,14 @@
 }
 
 .cards__description {
+  max-width: 340px;
   margin: 0;
   font-size: 20px;
   font-weight: 500;
   line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .cards__button {
@@ -60,5 +64,9 @@
 
   .cards__image {
     height: 288px;
+  }
+
+  .cards__description {
+    max-width: 230px;
   }
 }
