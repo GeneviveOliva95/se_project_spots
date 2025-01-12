@@ -8,7 +8,7 @@
   height: 190px;
   width: 190px;
   margin-right: 20px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .profile__column {
@@ -20,6 +20,7 @@
   max-width: 420px;
   color: #212121;
   margin: 0 0 12px;
+  font-size: 32px;
   font-weight: 500;
   line-height: 1;
   text-overflow: ellipsis;
@@ -35,6 +36,7 @@
   color: #212121;
   opacity: 0.7;
   margin: 0;
+  font-size: 16px;
   font-weight: 500;
   line-height: 1;
   text-overflow: ellipsis;
@@ -58,12 +60,7 @@
   line-height: 1;
 }
 
-.profile__pencil-logo {
-  opacity: 0.7;
-}
-
-.profile__edit-button:hover,
-.profile__pencil-logo:hover {
+.profile__edit-button:hover {
   opacity: 1;
   cursor: pointer;
 }
@@ -92,12 +89,14 @@
     flex-direction: column;
     align-items: center;
     max-width: 288px;
+    padding: 20px 0 20px;
   }
 
   .profile__image {
+    height: 80px;
+    width: 80px;
     display: flex;
     justify-content: center;
-    padding-top: 20px;
     margin: 0;
   }
 
