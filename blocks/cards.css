@@ -18,7 +18,7 @@
   height: 413px;
   width: 100%;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .cards__content {
@@ -28,6 +28,7 @@
 }
 
 .cards__description {
+  color: #212121;
   max-width: 340px;
   margin: 0;
   font-size: 20px;
@@ -54,8 +55,13 @@
 }
 
 @media screen and (max-width: 627px) {
+  .cards {
+    padding-bottom: 20px;
+  }
+
   .cards__list {
     grid-template-columns: repeat(auto-fit, 280px);
+    gap: 20px;
   }
 
   .cards__image {
@@ -64,5 +70,7 @@
 
   .cards__description {
     max-width: 230px;
+    font-size: 16px;
+    line-height: 1;
   }
 }
