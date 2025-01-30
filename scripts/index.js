@@ -72,6 +72,7 @@ function getCardElement(data) {
 
   const cardImageElement = cardElement.querySelector(".cards__image");
   cardImageElement.src = data.link;
+  cardImageElement.alt = data.name;
 
   return cardElement;
 }
