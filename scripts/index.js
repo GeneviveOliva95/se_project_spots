@@ -70,6 +70,9 @@ function getCardElement(data) {
   const cardNameElement = cardElement.querySelector(".cards__description");
   cardNameElement.textContent = data.name;
 
+  const cardImageElement = cardElement.querySelector(".cards__image");
+  cardImageElement.src = data.link;
+
   return cardElement;
 }
 
