@@ -41,6 +41,7 @@
 .modal__exit-logo {
   width: 100%;
   opacity: 0.4;
+  transition: background 0.3s;
 }
 
 .modal__exit-logo:hover {
@@ -74,6 +75,7 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
+  transition: background 0.3s;
 }
 
 .modal__input:hover {
@@ -98,6 +100,12 @@
   border-radius: 8px;
   font-weight: 500;
   line-height: 1;
+  transition: background 0.3s;
+}
+
+.modal__submit-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {

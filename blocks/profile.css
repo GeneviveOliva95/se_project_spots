@@ -60,6 +60,7 @@
   background: none;
   font-weight: 500;
   line-height: 1;
+  transition: 0.3s;
 }
 
 .profile__edit-button:hover {
@@ -79,6 +80,7 @@
   background-color: rgb(33, 33, 33);
   font-weight: 500;
   line-height: 1;
+  transition: 0.3s;
 }
 
 .profile__post-button:hover {
