@@ -54,6 +54,15 @@
   cursor: pointer;
 }
 
+.cards__heart-logo_liked {
+  background: url("../images/heart-liked.svg") no-repeat;
+  opacity: 1;
+}
+
+.cards__heart-logo_liked:hover {
+  background-image: url("../images/heart-liked-hover.svg");
+}
+
 @media screen and (max-width: 627px) {
   .cards {
     padding-bottom: 20px;
