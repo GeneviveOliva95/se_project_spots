@@ -98,11 +98,6 @@
   border-radius: 8px;
   font-weight: 500;
   line-height: 1;
-  transition: background 0.3s;
-}
-
-.modal__submit-button:hover {
-  background: rgba(0, 0, 0, 0.8);
   cursor: pointer;
 }
 
