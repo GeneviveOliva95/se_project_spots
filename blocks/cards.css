@@ -47,7 +47,6 @@
 
 .cards__heart-logo {
   opacity: 0.4;
-  transition: 0.3s;
 }
 
 .cards__heart-logo:hover {

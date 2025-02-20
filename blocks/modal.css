@@ -41,7 +41,6 @@
 .modal__exit-logo {
   width: 100%;
   opacity: 0.4;
-  transition: background 0.3s;
 }
 
 .modal__exit-logo:hover {
