@@ -70,6 +70,11 @@ function handleEditFormSubmit(e) {
 
 function handleAddCardSubmit(e) {
   e.preventDefault();
+  console.log(cardLinkInput.value);
+  console.log(cardNameInput.value);
+  const inputValues = { link: cardLinkInput.value, name: cardNameInput.value };
+  const cardElement = getCardElement(inputValues);
+  cardsList.prepend(cardElement);
   closeModal(cardModal);
 }
 
