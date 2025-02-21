@@ -47,15 +47,16 @@
 
 .cards__heart-logo {
   opacity: 0.4;
+  cursor: pointer;
 }
 
 .cards__heart-logo:hover {
   opacity: 1;
-  cursor: pointer;
 }
 
 .cards__heart-logo_liked {
-  background: url("../images/heart-liked.svg") no-repeat;
+  background-image: url("../images/heart-liked.svg");
+  background-repeat: no-repeat;
   opacity: 1;
 }
 
