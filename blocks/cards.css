@@ -40,17 +40,16 @@
 }
 
 .cards__button {
-  background: none;
+  background: transparent url("../images/heart.svg");
+  height: 20px;
+  width: 23px;
+  opacity: 0.4;
   border: none;
   padding: 0;
-}
-
-.cards__heart-logo {
-  opacity: 0.4;
   cursor: pointer;
 }
 
-.cards__heart-logo:hover {
+.cards__button:hover {
   opacity: 1;
 }
 
