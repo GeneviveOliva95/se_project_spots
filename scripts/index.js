@@ -85,20 +85,20 @@ function handleAddCardSubmit(e) {
 function getCardElement(data) {
   console.log(data);
   const cardElement = cardTemplate.content
-    .querySelector(".cards__list-item")
+    .querySelector(".card__list-item")
     .cloneNode(true);
 
-  const cardNameElement = cardElement.querySelector(".cards__description");
-  const cardImageElement = cardElement.querySelector(".cards__image");
-  const cardLikeButton = cardElement.querySelector(".cards__button");
-  const cardDiscardButton = cardElement.querySelector(".cards__discard-button");
+  const cardNameElement = cardElement.querySelector(".card__description");
+  const cardImageElement = cardElement.querySelector(".card__image");
+  const cardLikeButton = cardElement.querySelector(".card__button");
+  const cardDiscardButton = cardElement.querySelector(".card__discard-button");
 
   cardNameElement.textContent = data.name;
   cardImageElement.src = data.link;
   cardImageElement.alt = data.name;
 
   cardLikeButton.addEventListener("click", () => {
-    cardLikeButton.classList.toggle("cards__heart-logo_liked");
+    cardLikeButton.classList.toggle("card__heart-logo_liked");
   });
   cardDiscardButton.addEventListener("click", () => {
     cardElement.remove();
