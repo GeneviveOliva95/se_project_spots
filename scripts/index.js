@@ -52,6 +52,9 @@ const previewModal = document.querySelector("#preview-modal");
 const previewModalImageElement = previewModal.querySelector(".modal__image");
 const previewModalCaptionElement =
   previewModal.querySelector(".modal__caption");
+const previewModalCloseButton = previewModal.querySelector(
+  ".modal__close-button"
+);
 
 // Card Elements
 const cardsList = document.querySelector(".cards__list");
@@ -127,6 +130,10 @@ cardModalButton.addEventListener("click", () => {
 });
 cardModalCloseButton.addEventListener("click", () => {
   closeModal(cardModal);
+});
+
+previewModalCloseButton.addEventListener("click", () => {
+  closeModal(previewModal);
 });
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
