@@ -150,6 +150,14 @@
   cursor: pointer;
 }
 
+.modal__submit-button:hover {
+  background-color: rgba(33, 33, 33, 0.8);
+}
+
+.modal__submit-button_error {
+  background-color: rgba(33, 33, 33, 0.5);
+}
+
 @media screen and (max-width: 627px) {
   .modal {
     background-color: rgba(0, 0, 0, 0.85);
