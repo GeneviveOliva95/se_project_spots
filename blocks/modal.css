@@ -133,6 +133,10 @@
   line-height: 1.1;
 }
 
+.modal__input_type_error {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
 .modal__submit-button {
   height: 52px;
   width: 156px;
