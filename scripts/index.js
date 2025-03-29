@@ -76,18 +76,15 @@ function handleEditFormSubmit(e) {
 
 function handleAddCardSubmit(e) {
   e.preventDefault();
-  console.log(cardLinkInput.value);
-  console.log(cardNameInput.value);
   const inputValues = { link: cardLinkInput.value, name: cardNameInput.value };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   e.target.reset();
-  disableButton(cardSubmitButton);
+  disableButton(cardSubmitButton, settings);
   closeModal(cardModal);
 }
 
 function getCardElement(data) {
-  console.log(data);
   const cardElement = cardTemplate.content
     .querySelector(".card__list-item")
     .cloneNode(true);
@@ -120,10 +117,11 @@ function getCardElement(data) {
 profileEditButton.addEventListener("click", () => {
   editProfileNameInput.value = profileName.textContent;
   editProfileDescriptionInput.value = profileDescription.textContent;
-  resetValidation(editFormElement, [
-    editProfileNameInput,
-    editProfileDescriptionInput,
-  ]);
+  resetValidation(
+    editFormElement,
+    [editProfileNameInput, editProfileDescriptionInput],
+    settings
+  );
   openModal(editProfileModal);
 });
 editProfileCloseModal.addEventListener("click", () => {
