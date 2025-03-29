@@ -56,6 +56,8 @@ const previewModalCloseButton = previewModal.querySelector(
   ".modal__close-button"
 );
 
+const modalOverlayClose = document.querySelectorAll(".modal");
+
 const cardsList = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template");
 
@@ -156,4 +158,12 @@ cardFormElement.addEventListener("submit", handleAddCardSubmit);
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.append(cardElement);
+});
+
+modalOverlayClose.forEach((modal) => {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal(modal);
+    }
+  });
 });
