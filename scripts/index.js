@@ -1,3 +1,10 @@
+import {
+  enableValidation,
+  resetValidation,
+  disableButton,
+  settings,
+} from "./validation.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -167,3 +174,5 @@ modalOverlayClose.forEach((modal) => {
     }
   });
 });
+
+enableValidation(settings);
