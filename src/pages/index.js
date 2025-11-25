@@ -1,9 +1,15 @@
+import "./index.css";
+import imageLogo from "../images/logo.svg";
+import imageAvatar from "../images/avatar.jpg";
+import imagePencil from "../images/pencil.svg";
+import imageAdd from "../images/add.svg"
+import imageExit from "../images/exit.svg";
 import {
   enableValidation,
   resetValidation,
   disableButton,
   settings,
-} from "./validation.js";
+} from "../scripts/validation.js";
 
 const initialCards = [
   {
@@ -31,6 +37,16 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+
+const headerProfileLogo = document.querySelector(".header__logo");
+const headerProfileAvatar = document.querySelector(".profile__image");
+const headerPencilIcon = document.querySelector(".profile__pencil-logo");
+const headerAddIcon = document.querySelector(".profile__add-logo");
+const headerExitIcons = document.querySelectorAll(".modal__exit-logo");
+
+headerExitIcons.forEach(icon => {
+    icon.src = imageExit;
+});
 
 const profileEditButton = document.querySelector(".profile__edit-button");
 const cardModalButton = document.querySelector(".profile__post-button");
@@ -176,3 +192,8 @@ modalOverlayClose.forEach((modal) => {
 });
 
 enableValidation(settings);
+
+headerProfileLogo.src = imageLogo;
+headerProfileAvatar.src = imageAvatar;
+headerPencilIcon.src = imagePencil;
+headerAddIcon.src = imageAdd;
