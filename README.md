@@ -45,19 +45,19 @@ The web application is built according to responsive web design practices and co
 
 Desktop Version - 1440px (with no text overflow):
 
-![Desktop version of Spots with no text overflow](./images/demo/desktop-version.png)
+![Desktop version of Spots with no text overflow](./src/images/demo/desktop-version.png)
 
 Mobile Version - 320px (with no text overflow):
 
-![Mobile version of Spots with no text overflow](./images/demo/mobile-version.png)
+![Mobile version of Spots with no text overflow](./src/images/demo/mobile-version.png)
 
 Desktop Version - 1440px (with text overflow):
 
-![Desktop version of Spots with text overflow](./images/demo/desktop-version-text-overflow.png)
+![Desktop version of Spots with text overflow](./src/images/demo/desktop-version-text-overflow.png)
 
 Mobile Version - 320px (with text overflow):
 
-![Mobile version of Spots with text overflow](./images/demo/mobile-version-text-overflow.png)
+![Mobile version of Spots with text overflow](./src/images/demo/mobile-version-text-overflow.png)
 
 ## Plans on Improving the project
 
