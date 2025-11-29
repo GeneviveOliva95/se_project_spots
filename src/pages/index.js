@@ -2,7 +2,7 @@ import "./index.css";
 import imageLogo from "../images/logo.svg";
 import imageAvatar from "../images/avatar.jpg";
 import imagePencil from "../images/pencil.svg";
-import imageAdd from "../images/add.svg"
+import imageAdd from "../images/add.svg";
 import imageExit from "../images/exit.svg";
 import {
   enableValidation,
@@ -10,6 +10,7 @@ import {
   disableButton,
   settings,
 } from "../scripts/validation.js";
+import Api from "../scripts/Api.js";
 
 const initialCards = [
   {
@@ -38,14 +39,29 @@ const initialCards = [
   },
 ];
 
+const api = new Api({
+  baseUrl: "https://around-api.en.tripleten-services.com/v1",
+  headers: {
+    authorization: "4a4150e0-1b5c-48df-a744-8115870883ef",
+    "Content-Type": "application/json",
+  },
+});
+
+api.getInitialCards().then((cards) => {
+  cards.forEach((item) => {
+    const cardElement = getCardElement(item);
+    cardsList.append(cardElement);
+  });
+});
+
 const headerProfileLogo = document.querySelector(".header__logo");
 const headerProfileAvatar = document.querySelector(".profile__image");
 const headerPencilIcon = document.querySelector(".profile__pencil-logo");
 const headerAddIcon = document.querySelector(".profile__add-logo");
 const headerExitIcons = document.querySelectorAll(".modal__exit-logo");
 
-headerExitIcons.forEach(icon => {
-    icon.src = imageExit;
+headerExitIcons.forEach((icon) => {
+  icon.src = imageExit;
 });
 
 const profileEditButton = document.querySelector(".profile__edit-button");
@@ -177,11 +193,6 @@ function handleEscapeClose(e) {
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 cardFormElement.addEventListener("submit", handleAddCardSubmit);
-
-initialCards.forEach((item) => {
-  const cardElement = getCardElement(item);
-  cardsList.append(cardElement);
-});
 
 modalOverlayClose.forEach((modal) => {
   modal.addEventListener("click", (e) => {
