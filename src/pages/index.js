@@ -49,11 +49,15 @@ const api = new Api({
 
 api
   .getAppInfo()
-  .then(([cards]) => {
+  .then(([cards, info]) => {
     cards.forEach((item) => {
       const cardElement = getCardElement(item);
       cardsList.append(cardElement);
     });
+
+    headerProfileAvatar.src = info.avatar;
+    profileName.textContent = info.name;
+    profileDescription.textContent = info.about;
   })
   .catch((err) => {
     console.error(err);
