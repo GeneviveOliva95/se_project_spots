@@ -121,9 +121,17 @@ function closeModal(modal) {
 
 function handleEditFormSubmit(e) {
   e.preventDefault();
-  profileName.textContent = editProfileNameInput.value;
-  profileDescription.textContent = editProfileDescriptionInput.value;
-  closeModal(editProfileModal);
+  api
+    .editUserInfo({
+      name: editProfileNameInput.value,
+      about: editProfileDescriptionInput.value,
+    })
+    .then((data) => {
+      profileName.textContent = data.name;
+      profileDescription.textContent = data.about;
+      closeModal(editProfileModal);
+    })
+    .catch(console.error);
 }
 
 function handleAddCardSubmit(e) {
