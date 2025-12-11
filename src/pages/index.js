@@ -136,12 +136,16 @@ function handleEditFormSubmit(e) {
 
 function handleAddCardSubmit(e) {
   e.preventDefault();
-  const inputValues = { link: cardLinkInput.value, name: cardNameInput.value };
-  const cardElement = getCardElement(inputValues);
-  cardsList.prepend(cardElement);
-  e.target.reset();
-  disableButton(cardSubmitButton, settings);
-  closeModal(cardModal);
+  api
+    .addNewCard({ name: cardNameInput.value, link: cardLinkInput.value })
+    .then((data) => {
+      const cardElement = getCardElement(data);
+      cardsList.prepend(cardElement);
+      e.target.reset();
+      disableButton(cardSubmitButton, settings);
+      closeModal(cardModal);
+    })
+    .catch(console.error);
 }
 
 function getCardElement(data) {
