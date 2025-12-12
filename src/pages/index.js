@@ -96,6 +96,9 @@ const cardModalCloseButton = cardModal.querySelector(".modal__close-button");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
 
+const deleteModal = document.querySelector("#delete-card-modal");
+const deleteModalForm = deleteModal.querySelector(".modal__form");
+
 const previewModal = document.querySelector("#preview-modal");
 const previewModalImageElement = previewModal.querySelector(".modal__image");
 const previewModalCaptionElement =
@@ -108,6 +111,8 @@ const modalOverlayClose = document.querySelectorAll(".modal");
 
 const cardsList = document.querySelector(".cards__list");
 const cardTemplate = document.querySelector("#card-template");
+
+let selectedCard, selectedCardId;
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -148,6 +153,23 @@ function handleAddCardSubmit(e) {
     .catch(console.error);
 }
 
+function handleDeleteCard(cardElement, cardId) {
+  selectedCard = cardElement;
+  selectedCardId = cardId;
+  openModal(deleteModal);
+}
+
+function handleDeleteSubmit(e) {
+  e.preventDefault();
+  api
+    .deleteCard(selectedCardId)
+    .then(() => {
+      selectedCard.remove();
+      closeModal(deleteModal);
+    })
+    .catch(console.error);
+}
+
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card__list-item")
@@ -165,8 +187,8 @@ function getCardElement(data) {
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__heart-logo_liked");
   });
-  cardDiscardButton.addEventListener("click", () => {
-    cardElement.remove();
+  cardDiscardButton.addEventListener("click", (e) => {
+    handleDeleteCard(cardElement, data._id);
   });
   cardImageElement.addEventListener("click", () => {
     openModal(previewModal);
@@ -214,6 +236,7 @@ function handleEscapeClose(e) {
 
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 cardFormElement.addEventListener("submit", handleAddCardSubmit);
+deleteModalForm.addEventListener("submit", handleDeleteSubmit);
 
 modalOverlayClose.forEach((modal) => {
   modal.addEventListener("click", (e) => {
