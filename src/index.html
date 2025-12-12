@@ -141,19 +141,35 @@
         <p class="modal__caption"></p>
       </div>
     </div>
-    <div class="modal" id="delete-card-modal">
+    <!--Delete modal__opened class once done-->
+    <div class="modal modal__opened" id="delete-card-modal">
       <div class="modal__container modal__container_type_delete">
-        <button type="button" class="modal__close-button">
-          <img src="" alt="Exit logo" class="modal__exit-logo" />
-        </button>
-        <h2 class="modal__title">
+        <h2 class="modal__title modal__title_delete">
           Are you sure you want to delete this image?
         </h2>
-        <form id="delete-form" class="modal__form" novalidate>
-          <button type="submit" class="modal__submit-button">Delete</button>
-          <button type="button" class="modal__submit-button">Cancel</button>
+        <form
+          id="delete-form"
+          class="modal__form modal__form_delete"
+          novalidate
+        >
+          <button
+            type="submit"
+            class="modal__submit-button modal__submit-button_type_delete"
+          >
+            Delete
+          </button>
+          <button
+            type="button"
+            class="modal__submit-button modal__submit-button_type_cancel"
+          >
+            Cancel
+          </button>
         </form>
       </div>
+      <!--Removed separate classes for exit button-->
+      <button type="button" class="modal__close-button">
+        <img src="" alt="Exit logo" class="modal__exit-logo" />
+      </button>
     </div>
   </body>
 </html>

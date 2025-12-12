@@ -30,10 +30,21 @@
   border-radius: 8px;
 }
 
+.modal__container_type_delete {
+  width: 630px;
+  height: 172px;
+}
+
 .modal__container_type_preview {
   background-color: transparent;
   max-width: fit-content;
   padding: 0;
+}
+
+.modal__form_delete {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .modal__image {
@@ -87,11 +98,16 @@
 }
 
 .modal__title {
-  color: #212121;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   font-size: 32px;
   font-weight: 500;
   line-height: 1;
+  color: #212121;
   margin: 0 0 32px;
+}
+
+.modal__title_delete {
+  font-size: 24px;
 }
 
 .modal__label {
@@ -138,6 +154,7 @@
 }
 
 .modal__submit-button {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
   height: 52px;
   width: 156px;
   color: #fcf5e5;
@@ -156,6 +173,28 @@
 
 .modal__submit-button_error {
   background-color: rgba(33, 33, 33, 0.5);
+}
+
+.modal__submit-button_type_delete {
+  background-color: rgb(255, 101, 101, 1);
+  color: rgb(33, 33, 33, 1);
+  padding: 18px 32px;
+}
+
+.modal__submit-button_type_delete:hover {
+  background-color: rgb(255, 51, 51, 1);
+}
+
+.modal__submit-button_type_cancel {
+  background-color: transparent;
+  color: rgb(33, 33, 33, 1);
+  padding: 18px 32px;
+  border: 1px solid rgb(33, 33, 33, 1);
+}
+
+.modal__submit-button_type_cancel:hover {
+  background-color: rgb(33, 33, 33, 1);
+  color: rgb(255, 255, 255, 1);
 }
 
 @media screen and (max-width: 627px) {
