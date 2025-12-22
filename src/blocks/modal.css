@@ -87,6 +87,13 @@
   cursor: pointer;
 }
 
+.modal__close-button_type_close {
+  background: transparent url("../images/exit-preview.svg");
+  top: 0;
+  right: -52px;
+  cursor: pointer;
+}
+
 .modal__exit-logo {
   width: 100%;
   opacity: 0.4;
