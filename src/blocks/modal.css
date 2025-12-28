@@ -230,6 +230,17 @@
     line-height: 1;
   }
 
+  .modal__container_type_delete {
+    max-width: 300px;
+    height: 208px;
+  }
+
+  .modal__form_delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .modal__image {
     max-width: fit-content;
   }
@@ -254,4 +265,6 @@
     width: 100%;
     padding: 18px 118px;
   }
+
+  /* The .modal__submit-button media query is preventing styles from being applied to the delete confirmation modal */
 }
