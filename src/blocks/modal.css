@@ -82,6 +82,7 @@
 
 .modal__close-button_type_preview {
   background: transparent url("../images/exit-preview.svg");
+  background-position: center;
   top: 0;
   right: -52.5px;
   opacity: 1;
@@ -90,6 +91,7 @@
 
 .modal__close-button_type_close {
   background: transparent url("../images/exit-preview.svg");
+  background-position: center;
   top: 0;
   right: -52px;
   cursor: pointer;
@@ -220,6 +222,12 @@
     font-size: 20px;
   }
 
+  .modal__title_delete {
+    margin: 0 0 20px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
   .modal__label {
     margin: 0 0 24px;
   }
@@ -228,6 +236,10 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 1;
+  }
+
+  .modal__container_type_preview {
+    padding: 0 6px;
   }
 
   .modal__container_type_delete {
@@ -239,6 +251,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 12px;
   }
 
   .modal__image {
@@ -256,9 +269,15 @@
   }
 
   .modal__close-button_type_preview {
-    top: -26.25px;
-    right: 0;
+    background-position: center;
+    top: -48px;
+    right: 6px;
     opacity: 1;
+  }
+
+  .modal__close-button_type_close {
+    top: -56px;
+    right: 6px;
   }
 
   .modal__submit-button {
@@ -266,5 +285,15 @@
     padding: 18px 118px;
   }
 
-  /* The .modal__submit-button media query is preventing styles from being applied to the delete confirmation modal */
+  .modal__submit-button_type_delete {
+    height: 52px;
+    width: 156px;
+    padding: 18px 52px;
+  }
+
+  .modal__submit-button_type_cancel {
+    height: 52px;
+    width: 156px;
+    padding: 18px 49px;
+  }
 }
