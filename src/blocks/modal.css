@@ -207,7 +207,7 @@
   color: rgb(255, 255, 255, 1);
 }
 
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 750px) {
   .modal {
     background-color: rgba(0, 0, 0, 0.85);
     padding: 0 10px;
