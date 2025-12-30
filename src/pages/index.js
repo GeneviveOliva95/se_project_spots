@@ -98,6 +98,12 @@ const cardNameInput = cardModal.querySelector("#add-card-name-input");
 
 const deleteModal = document.querySelector("#delete-card-modal");
 const deleteModalForm = deleteModal.querySelector(".modal__form");
+const deleteModalCancelButton = deleteModal.querySelector(
+  ".modal__submit-button_type_cancel"
+);
+const deleteModalCloseButton = deleteModal.querySelector(
+  ".modal__close-button_type_close"
+);
 
 const previewModal = document.querySelector("#preview-modal");
 const previewModalImageElement = previewModal.querySelector(".modal__image");
@@ -223,6 +229,13 @@ cardModalCloseButton.addEventListener("click", () => {
 
 previewModalCloseButton.addEventListener("click", () => {
   closeModal(previewModal);
+});
+
+deleteModalCancelButton.addEventListener("click", () => {
+  closeModal(deleteModal);
+});
+deleteModalCloseButton.addEventListener("click", () => {
+  closeModal(deleteModal);
 });
 
 function handleEscapeClose(e) {
