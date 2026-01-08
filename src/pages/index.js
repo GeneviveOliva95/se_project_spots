@@ -176,6 +176,16 @@ function handleDeleteSubmit(e) {
     .catch(console.error);
 }
 
+function handleLike(e, id) {
+  const isLiked = e.target.classList.contains("card__heart-logo_liked");
+  api
+    .changeLikeStatus(id, isLiked)
+    .then(() => {
+      e.target.classList.toggle("card__heart-logo_liked");
+    })
+    .catch(console.error);
+}
+
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card__list-item")
@@ -186,14 +196,18 @@ function getCardElement(data) {
   const cardLikeButton = cardElement.querySelector(".card__button");
   const cardDiscardButton = cardElement.querySelector(".card__discard-button");
 
+  function saveLikeStatus() {
+    if (data.isLiked === true) {
+      cardLikeButton.classList.add("card__heart-logo_liked");
+    }
+  }
+
   cardNameElement.textContent = data.name;
   cardImageElement.src = data.link;
   cardImageElement.alt = data.name;
 
-  cardLikeButton.addEventListener("click", () => {
-    cardLikeButton.classList.toggle("card__heart-logo_liked");
-  });
-  cardDiscardButton.addEventListener("click", (e) => {
+  cardLikeButton.addEventListener("click", (e) => handleLike(e, data._id));
+  cardDiscardButton.addEventListener("click", () => {
     handleDeleteCard(cardElement, data._id);
   });
   cardImageElement.addEventListener("click", () => {
@@ -202,6 +216,8 @@ function getCardElement(data) {
     previewModalImageElement.src = data.link;
     previewModalImageElement.alt = data.name;
   });
+
+  saveLikeStatus();
 
   return cardElement;
 }
