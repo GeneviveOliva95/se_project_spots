@@ -4,6 +4,32 @@
   border-bottom: solid 1px rgba(33, 33, 33, 0.4);
 }
 
+.profile__avatar-container {
+  position: relative;
+}
+
+.profile__avatar-container:hover .profile__avatar-button {
+  visibility: visible;
+}
+
+.profile__avatar-button {
+  position: absolute;
+  height: 190px;
+  width: 190px;
+  padding: 0 0 12px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 8px;
+  visibility: hidden;
+}
+
+.profile__avatar-button::after {
+  content: "Edit avatar";
+}
+
 .profile__image {
   height: 190px;
   width: 190px;

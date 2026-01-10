@@ -2,6 +2,7 @@ import "./index.css";
 import imageLogo from "../images/logo.svg";
 import imageAvatar from "../images/avatar.jpg";
 import imagePencil from "../images/pencil.svg";
+import imagePencilLight from "../images/pencil-light.svg";
 import imageAdd from "../images/add.svg";
 import imageExit from "../images/exit.svg";
 import {
@@ -66,6 +67,9 @@ api
 const headerProfileLogo = document.querySelector(".header__logo");
 const headerProfileAvatar = document.querySelector(".profile__image");
 const headerPencilIcon = document.querySelector(".profile__pencil-logo");
+const headerAvatarPencilIcon = document.querySelector(
+  ".profile__avatar-pencil-logo"
+);
 const headerAddIcon = document.querySelector(".profile__add-logo");
 const headerExitIcons = document.querySelectorAll(".modal__exit-logo");
 
@@ -280,4 +284,5 @@ enableValidation(settings);
 headerProfileLogo.src = imageLogo;
 headerProfileAvatar.src = imageAvatar;
 headerPencilIcon.src = imagePencil;
+headerAvatarPencilIcon.src = imagePencilLight;
 headerAddIcon.src = imageAdd;
