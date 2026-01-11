@@ -13,33 +13,6 @@ import {
 } from "../scripts/validation.js";
 import Api from "../utils/Api.js";
 
-const initialCards = [
-  {
-    name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-  {
-    name: "Restaurant terrace",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-  },
-  {
-    name: "An outdoor cafe",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-  },
-  {
-    name: "A very long bridge, over the forest and through the trees",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
-  },
-  {
-    name: "Tunnel with morning light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-  },
-  {
-    name: "Mountain house",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-  },
-];
-
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
@@ -79,6 +52,7 @@ headerExitIcons.forEach((icon) => {
 
 const profileEditButton = document.querySelector(".profile__edit-button");
 const cardModalButton = document.querySelector(".profile__post-button");
+const avatarModalButton = document.querySelector(".profile__avatar-button");
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
@@ -93,12 +67,21 @@ const editProfileNameInput = editProfileModal.querySelector(
 const editProfileDescriptionInput = editProfileModal.querySelector(
   "#profile-description-input"
 );
+
 const cardModal = document.querySelector("#add-card-modal");
 const cardFormElement = cardModal.querySelector(".add-card-form");
 const cardSubmitButton = cardModal.querySelector(".modal__submit-button");
 const cardModalCloseButton = cardModal.querySelector(".modal__close-button");
 const cardLinkInput = cardModal.querySelector("#add-card-link-input");
 const cardNameInput = cardModal.querySelector("#add-card-name-input");
+
+const avatarModal = document.querySelector("#edit-avatar-modal");
+const avatarFormElement = avatarModal.querySelector(".modal__form");
+const avatarSubmitButton = avatarModal.querySelector(".modal__submit-button");
+const avatarModalCloseButton = avatarModal.querySelector(
+  ".modal__close-button"
+);
+const avatarLinkInput = avatarModal.querySelector("#profile-avatar-input");
 
 const deleteModal = document.querySelector("#delete-card-modal");
 const deleteModalForm = deleteModal.querySelector(".modal__form");
@@ -180,6 +163,19 @@ function handleDeleteSubmit(e) {
     .catch(console.error);
 }
 
+function handleAvatarSubmit(e) {
+  e.preventDefault();
+  api
+    .editUserAvatar(avatarLinkInput.value)
+    .then((data) => {
+      headerProfileAvatar.src = data.avatar;
+      disableButton(avatarSubmitButton, settings);
+      closeModal(avatarModal);
+      e.target.reset();
+    })
+    .catch(console.error);
+}
+
 function handleLike(e, id) {
   const isLiked = e.target.classList.contains("card__heart-logo_liked");
   api
@@ -247,6 +243,13 @@ cardModalCloseButton.addEventListener("click", () => {
   closeModal(cardModal);
 });
 
+avatarModalButton.addEventListener("click", () => {
+  openModal(avatarModal);
+});
+avatarModalCloseButton.addEventListener("click", () => {
+  closeModal(avatarModal);
+});
+
 previewModalCloseButton.addEventListener("click", () => {
   closeModal(previewModal);
 });
@@ -270,6 +273,7 @@ function handleEscapeClose(e) {
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 cardFormElement.addEventListener("submit", handleAddCardSubmit);
 deleteModalForm.addEventListener("submit", handleDeleteSubmit);
+avatarFormElement.addEventListener("submit", handleAvatarSubmit);
 
 modalOverlayClose.forEach((modal) => {
   modal.addEventListener("click", (e) => {
