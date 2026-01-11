@@ -119,6 +119,10 @@ function closeModal(modal) {
 
 function handleEditFormSubmit(e) {
   e.preventDefault();
+
+  const submitButton = e.submitter;
+  submitButton.textContent = "Saving...";
+
   api
     .editUserInfo({
       name: editProfileNameInput.value,
@@ -129,11 +133,18 @@ function handleEditFormSubmit(e) {
       profileDescription.textContent = data.about;
       closeModal(editProfileModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      submitButton.textContent = "Save";
+    });
 }
 
 function handleAddCardSubmit(e) {
   e.preventDefault();
+
+  const submitButton = e.submitter;
+  submitButton.textContent = "Saving...";
+
   api
     .addNewCard({ name: cardNameInput.value, link: cardLinkInput.value })
     .then((data) => {
@@ -143,7 +154,10 @@ function handleAddCardSubmit(e) {
       disableButton(cardSubmitButton, settings);
       closeModal(cardModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      submitButton.textContent = "Save";
+    });
 }
 
 function handleDeleteCard(cardElement, cardId) {
@@ -154,17 +168,28 @@ function handleDeleteCard(cardElement, cardId) {
 
 function handleDeleteSubmit(e) {
   e.preventDefault();
+
+  const submitButton = e.submitter;
+  submitButton.textContent = "Deleting...";
+
   api
     .deleteCard(selectedCardId)
     .then(() => {
       selectedCard.remove();
       closeModal(deleteModal);
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      submitButton.textContent = "Delete";
+    });
 }
 
 function handleAvatarSubmit(e) {
   e.preventDefault();
+
+  const submitButton = e.submitter;
+  submitButton.textContent = "Saving...";
+
   api
     .editUserAvatar(avatarLinkInput.value)
     .then((data) => {
@@ -173,7 +198,10 @@ function handleAvatarSubmit(e) {
       closeModal(avatarModal);
       e.target.reset();
     })
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => {
+      submitButton.textContent = "Save";
+    });
 }
 
 function handleLike(e, id) {
