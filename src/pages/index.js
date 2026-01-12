@@ -33,9 +33,7 @@ api
     profileName.textContent = info.name;
     profileDescription.textContent = info.about;
   })
-  .catch((err) => {
-    console.error(err);
-  });
+  .catch(console.error);
 
 const headerProfileLogo = document.querySelector(".header__logo");
 const headerProfileAvatar = document.querySelector(".profile__image");
@@ -194,9 +192,9 @@ function handleAvatarSubmit(e) {
     .editUserAvatar(avatarLinkInput.value)
     .then((data) => {
       headerProfileAvatar.src = data.avatar;
+      e.target.reset();
       disableButton(avatarSubmitButton, settings);
       closeModal(avatarModal);
-      e.target.reset();
     })
     .catch(console.error)
     .finally(() => {
@@ -260,34 +258,27 @@ profileEditButton.addEventListener("click", () => {
   );
   openModal(editProfileModal);
 });
-editProfileCloseModal.addEventListener("click", () => {
-  closeModal(editProfileModal);
-});
 
 cardModalButton.addEventListener("click", () => {
   openModal(cardModal);
-});
-cardModalCloseButton.addEventListener("click", () => {
-  closeModal(cardModal);
 });
 
 avatarModalButton.addEventListener("click", () => {
   openModal(avatarModal);
 });
-avatarModalCloseButton.addEventListener("click", () => {
-  closeModal(avatarModal);
-});
 
-previewModalCloseButton.addEventListener("click", () => {
-  closeModal(previewModal);
-});
+function setupModalCloseButton(closeButton, modal) {
+  closeButton.addEventListener("click", () => {
+    closeModal(modal);
+  });
+}
 
-deleteModalCancelButton.addEventListener("click", () => {
-  closeModal(deleteModal);
-});
-deleteModalCloseButton.addEventListener("click", () => {
-  closeModal(deleteModal);
-});
+setupModalCloseButton(editProfileCloseModal, editProfileModal);
+setupModalCloseButton(cardModalCloseButton, cardModal);
+setupModalCloseButton(avatarModalCloseButton, avatarModal);
+setupModalCloseButton(previewModalCloseButton, previewModal);
+setupModalCloseButton(deleteModalCancelButton, deleteModal);
+setupModalCloseButton(deleteModalCloseButton, deleteModal);
 
 function handleEscapeClose(e) {
   if (e.key === "Escape") {
