@@ -24,7 +24,8 @@ This web page is deployed to GitHub Pages.
 
 Below is a link to the project video explaining the purpose of the web page, techniques used, and explanation for using said techniques.
 
-- [Spots - Project Video](https://drive.google.com/file/d/11rbS2fVmcRSd45V1s5swwxe2r3FN_qex/view?usp=drive_link)
+- [Spots - Project Video](https://drive.google.com/file/d/11rbS2fVmcRSd45V1s5swwxe2r3FN_qex/view?usp=sharing)
+- [Spots - Project Pitch](https://drive.google.com/file/d/17FTM2_yvbiWFDvEsrUoXRhQFBkrMjezK/view?usp=sharing)
 
 ## Overview
 
