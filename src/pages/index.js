@@ -119,7 +119,16 @@ function handleEditFormSubmit(e) {
   e.preventDefault();
 
   const submitButton = e.submitter;
-  submitButton.textContent = "Saving...";
+
+  if (
+    editProfileNameInput.value === profileName.textContent &&
+    editProfileDescriptionInput.value === profileDescription.textContent
+  ) {
+    disableButton(submitButton, settings);
+    return;
+  } else {
+    submitButton.textContent = "Saving...";
+  }
 
   api
     .editUserInfo({
@@ -149,7 +158,7 @@ function handleAddCardSubmit(e) {
       const cardElement = getCardElement(data);
       cardsList.prepend(cardElement);
       e.target.reset();
-      disableButton(cardSubmitButton, settings);
+      disableButton(submitButton, settings);
       closeModal(cardModal);
     })
     .catch(console.error)
@@ -193,7 +202,7 @@ function handleAvatarSubmit(e) {
     .then((data) => {
       headerProfileAvatar.src = data.avatar;
       e.target.reset();
-      disableButton(avatarSubmitButton, settings);
+      disableButton(submitButton, settings);
       closeModal(avatarModal);
     })
     .catch(console.error)
