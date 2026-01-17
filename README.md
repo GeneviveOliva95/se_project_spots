@@ -1,8 +1,10 @@
 # Spots
 
-This is the third project of the Software Engineering program at TripleTen.
+Spots is the third project in the Software Engineering program at TripleTen.
 
-Spots is a social media web application created using HTML and CSS. It is based on a Figma design that supports layouts for mobile, tablet, and desktop.
+Spots is a social media web application created using HTML, CSS, JavaScript, and powered by APIs and Webpack. It is based on a Figma design which features fully responsive layouts optimized for mobile, tablet, and desktop.
+
+The goal of Spots is to enable users to curate a collection of images which inspire them. Users can interact with the interface which boasts fully functional modals, avatar customization, and image preview functionality.
 
 ## Tech Stack
 
@@ -13,6 +15,9 @@ Spots is a social media web application created using HTML and CSS. It is based 
 - BEM file structure
 - DevTools
 - Media Queries
+- API integration
+- JavaScript modules
+- Webpack
 
 ## Deployment
 
@@ -36,7 +41,7 @@ Below is a link to the project video explaining the purpose of the web page, tec
 **Intro**
 Spots allows users to customize their profiles, add or remove and caption photos, as well as like photos from other users.
 
-The web application is built according to responsive web design practices and contains hover functionality for best user experience.
+The web application is built according to responsive web design practices and contains API functionality for best user experience.
 
 **Figma**
 
