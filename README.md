@@ -1,8 +1,10 @@
 # Spots
 
-This is the third project of the Software Engineering program at TripleTen.
+Spots is the third project in the Software Engineering program at TripleTen.
 
-Spots is a social media web application created using HTML and CSS. It is based on a Figma design that supports layouts for mobile, tablet, and desktop.
+Spots is a social media web application created using HTML, CSS, JavaScript, and powered by APIs and Webpack. It is based on a Figma design which features fully responsive layouts optimized for mobile, tablet, and desktop.
+
+The goal of Spots is to enable users to curate a collection of images which inspire them. Users can interact with the interface which boasts fully functional modals, avatar customization, and image preview functionality.
 
 ## Tech Stack
 
@@ -13,6 +15,9 @@ Spots is a social media web application created using HTML and CSS. It is based 
 - BEM file structure
 - DevTools
 - Media Queries
+- API integration
+- JavaScript modules
+- Webpack
 
 ## Deployment
 
@@ -24,7 +29,8 @@ This web page is deployed to GitHub Pages.
 
 Below is a link to the project video explaining the purpose of the web page, techniques used, and explanation for using said techniques.
 
-- [Spots - Project Video](https://drive.google.com/file/d/11rbS2fVmcRSd45V1s5swwxe2r3FN_qex/view?usp=drive_link)
+- [Spots - Project Video](https://drive.google.com/file/d/11rbS2fVmcRSd45V1s5swwxe2r3FN_qex/view?usp=sharing)
+- [Spots - Project Pitch](https://drive.google.com/file/d/17FTM2_yvbiWFDvEsrUoXRhQFBkrMjezK/view?usp=sharing)
 
 ## Overview
 
@@ -35,7 +41,7 @@ Below is a link to the project video explaining the purpose of the web page, tec
 **Intro**
 Spots allows users to customize their profiles, add or remove and caption photos, as well as like photos from other users.
 
-The web application is built according to responsive web design practices and contains hover functionality for best user experience.
+The web application is built according to responsive web design practices and contains API functionality for best user experience.
 
 **Figma**
 
@@ -45,19 +51,19 @@ The web application is built according to responsive web design practices and co
 
 Desktop Version - 1440px (with no text overflow):
 
-![Desktop version of Spots with no text overflow](./images/demo/desktop-version.png)
+![Desktop version of Spots with no text overflow](./src/images/demo/desktop-version.png)
 
 Mobile Version - 320px (with no text overflow):
 
-![Mobile version of Spots with no text overflow](./images/demo/mobile-version.png)
+![Mobile version of Spots with no text overflow](./src/images/demo/mobile-version.png)
 
 Desktop Version - 1440px (with text overflow):
 
-![Desktop version of Spots with text overflow](./images/demo/desktop-version-text-overflow.png)
+![Desktop version of Spots with text overflow](./src/images/demo/desktop-version-text-overflow.png)
 
 Mobile Version - 320px (with text overflow):
 
-![Mobile version of Spots with text overflow](./images/demo/mobile-version-text-overflow.png)
+![Mobile version of Spots with text overflow](./src/images/demo/mobile-version-text-overflow.png)
 
 ## Plans on Improving the project
 
